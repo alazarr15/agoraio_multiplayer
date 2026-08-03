@@ -1,1 +1,21 @@
-# Placeholder docker compose file for the cell-clash scaffold.
+services:
+  postgres:
+    image: postgres:17
+
+    container_name: cell-clash-db
+
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: cell_clash
+
+    ports:
+      - "5432:5432"
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
