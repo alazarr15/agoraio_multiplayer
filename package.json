@@ -1,0 +1,8 @@
+{
+  "name": "cell-clash",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
+}
