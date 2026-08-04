@@ -17,7 +17,7 @@ RUN bun install
 COPY apps/server .
 
 # expose the port that the server will run on 
-EXPOSE 3000
+EXPOSE 5000
 
 # run the server using bun
 CMD ["bun", "run", "dev"]

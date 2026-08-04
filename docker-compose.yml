@@ -24,13 +24,31 @@ services:
     restart: unless-stopped
 
     ports:
-      - "3000:3000"
+      - "5000:5000"
 
     depends_on:
       - postgres
 
     environment:
       DATABASE_URL: postgres://postgres:postgres@postgres:5432/cell_clash
+
+  client:
+    build:
+      context: .
+      dockerfile: ./apps/client/Dockerfile
+
+    container_name: cell-clash-client
+    restart: unless-stopped
+
+    ports:
+      - "3000:3000"
+
+    depends_on:
+      - server
+
+    environment:
+      server_URL: http://server:5000
+
 
 volumes:
   postgres_data:
