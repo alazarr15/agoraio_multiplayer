@@ -1,9 +1,7 @@
 services:
   postgres:
     image: postgres:17
-
     container_name: cell-clash-db
-
     restart: unless-stopped
 
     environment:
@@ -16,6 +14,23 @@ services:
 
     volumes:
       - postgres_data:/var/lib/postgresql/data
+
+  server:
+    build:
+      context: .
+      dockerfile: ./apps/server/Dockerfile
+
+    container_name: cell-clash-server
+    restart: unless-stopped
+
+    ports:
+      - "3000:3000"
+
+    depends_on:
+      - postgres
+
+    environment:
+      DATABASE_URL: postgres://postgres:postgres@postgres:5432/cell_clash
 
 volumes:
   postgres_data:
