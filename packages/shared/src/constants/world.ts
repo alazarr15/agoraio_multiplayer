@@ -1,0 +1,7 @@
+export const worldConstants = {
+ WORLD_WIDTH : 5000,
+ WORLD_HEIGHT : 5000,
+ PELLET_COUNT : 1000,
+ VIRUS_COUNT : 20,
+ SAFE_ZONE_RADIUS : 200
+}
