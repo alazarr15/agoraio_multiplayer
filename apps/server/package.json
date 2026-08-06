@@ -3,14 +3,14 @@
   "module": "index.ts",
   "type": "module",
   "private": true,
-   "scripts": {
+  "scripts": {
     "dev": "bun --watch src/index.ts",
     "start": "bun src/index.ts"
   },
   "devDependencies": {
     "@types/bun": "latest",
     "@types/node": "^26.1.2",
-    "drizzle-kit": "^0.31.10"
+    "drizzle-kit": "^1.0.0-rc.4"
   },
   "peerDependencies": {
     "typescript": "^5"
@@ -19,7 +19,7 @@
     "@cell-clash/shared": "workspace:*",
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
-    "drizzle-orm": "^0.45.2",
+    "drizzle-orm": "^1.0.0-rc.4",
     "hono": "^4.12.34",
     "postgres": "^3.4.9",
     "socket.io": "^4.8.3",
