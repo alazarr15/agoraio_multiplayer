@@ -21,20 +21,3 @@ export interface gameStatePayload {
 export interface leaderboardPayload {
     leaderboard: LeaderboardEntry[];    
 }
-
-
-
-/*
-clien -> server
-
-join 
-move
-split
-eject
-
-server -> client
-gamestate
-leaderboard
-
-
-*/
