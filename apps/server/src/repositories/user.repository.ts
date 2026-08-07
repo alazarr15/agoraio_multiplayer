@@ -1,7 +1,7 @@
-import type {User, CreateUserInput, UpdateUser} from "../entities/user";
+import type {User, CreateUser, UpdateUser} from "../entities/user";
 
 export interface UserRepository {
-  createUser(data: CreateUserInput): Promise<User>
+  createUser(data: CreateUser): Promise<User>
 
   findById(id: string): Promise<User | null>;
 

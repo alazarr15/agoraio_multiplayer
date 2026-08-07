@@ -3,10 +3,10 @@ export interface User {
   username: string;
   email: string; 
   passwordHash: string;
-  createdAt: string;
+  createdAt: Date;
 }
 
-export interface CreateUserInput {
+export interface CreateUser {
     username: string;
     email:string;
     passwordHash: string;
