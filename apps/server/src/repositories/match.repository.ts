@@ -1,19 +1,13 @@
-import type { CreateGame, GameSession, GameStatus } from "../entities/game-session";
+import type { CreateMatch, GameResult } from "../entities/game-result";
 
-export interface GameRepository {
-  create(data: CreateGame): Promise<GameSession>;
+export interface MatchRepository {
+  create(data: CreateMatch): Promise<GameResult>;
 
-  findById(id: string): Promise<GameSession | null>;
+  findByGame(
+    gameId: string
+  ): Promise<GameResult | null>;
 
-  findWaitingGame(): Promise<GameSession | null>;
-
-  updateStatus(
-    id: string,
-    status: GameStatus
-  ): Promise<void>;
-
-  finishGame(
-    id: string,
-    winnerId: string
-  ): Promise<void>;
+  historyByUser(
+    userId: string
+  ): Promise<GameResult[]>;
 }
