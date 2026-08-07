@@ -6,7 +6,7 @@ export default defineConfig({
   dialect: "postgresql",
 
   schema:
-    "./src/infrastructure/postgres/schema/*.ts",
+    "./src/infrastructure/postgres/schema/index.ts",
 
   out:
     "./src/infrastructure/postgres/migrations",
